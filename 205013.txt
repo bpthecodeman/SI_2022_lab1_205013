@@ -1,0 +1,56 @@
+1. touch shopping_list.txt -> Creates a new file named "shopping_list.txt"
+2. nvim shopping_list -> Uses neovim to add 5 items in the file and saves the file
+3. git add . -> Moves all files to index (stages them)
+4. git commit -m "Add 5 items to the shopping list" -> Creates a commit using all the staged files with the message of "Add 5 items to the shopping list"
+5. nvim shopping_list -> Uses neovim to add quantities to all the items and saves the file
+6. git commit -am "Add quantities to the items." -> Stages all the files and commits them with the given message
+7. git branch branch1 -> Creates a new branch from master named branch1
+8. git branch branch2 -> Creates a new branch from master named branch2
+9. git log --oneline -> Prints the current git logs in one line
+
+Logs:
+22917ac (HEAD -> master, branch2, branch1) Add quantities to the items.
+9dff8f5 Add 5 items to the shopping list
+dd99f1c (origin/master, origin/HEAD) Initial commit
+
+10. git push --all -> Publishes all the created commits on all the branches in your local repository to your remote repository
+11. git checkout branch1 -> To switch from master to branch1
+12. nvim shopping_list -> Modify the 5th item and save the file
+13. git commit -am "Change quantity of item #5" -> Stages the files and commits the changes using the given message
+14. git checkout master -> Change the branch from branch1 to master
+15. nvim shopping_list -> Change the 2nd item and save the file
+16. git commit -am "Change quantity of item #2" -> Stages files and creates a commit with the specifed message
+17. git push --all -> Publishes all the created commits on all the branches in your local repository to your remote repository
+18. git checkout branch2 -> To switch from master to branch2
+19. nvim shopping_list -> Modify the 4th item and save the file
+20. git commit -am "Modify item #4" -> Stages all the files and creates a commit with the speccifed message
+21. git log --oneline -> Prints the current logs (logs in branch2) in one line
+
+Logs:
+eb348ef (HEAD -> branch2) Modify item #4
+22917ac (origin/branch2) Add quantities to the items.
+9dff8f5 Add 5 items to the shopping list
+dd99f1c Initial commit
+
+22. nvim shopping_list -> Add a new item and save the file
+23. git commit -a --amend -> Stages the files and modifes the last commit by adding the new changes to that commit
+24. git log --oneline -> Prints the current logs (logs in branch2) in one line
+
+Logs:
+da3cb91 (HEAD -> branch2) Modify item #4 and add item #6
+22917ac (origin/branch2) Add quantities to the items.
+9dff8f5 Add 5 items to the shopping list
+dd99f1c Initial commit
+
+25. git checkout master -> Swithces from branch2 to master
+26. git merge branch1 -> Merges the changes from branch1 into master
+	- While mergeing conflict didn't happen
+	- Recursive merge happened because master had changes that branch1 didn't have
+27. git merge branch2 -> Merges the changes from branch2 into master
+	- While merging conflict happened
+	- I fixed the conflicts by accepting the incoming changes (using nvim I have manually selected what changes I want to have)
+	- Recursive merge happened because master had changes that branch2 didn't have
+28. git commit -am "Merge branch 'branch2'" -> After fixing the conflicts, I have finished the merge by staging and commiting the conflict fix
+29. git add 205013.txt -> Stages the documentation file
+30. git commit -m "Add docs" -> Commits the documentation file using the given message
+31. git push --all -> Syncs your local repository with the remote one
