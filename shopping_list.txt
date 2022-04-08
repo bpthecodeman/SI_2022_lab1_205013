@@ -1,5 +1,6 @@
 bread x 2
 milk x 4
 detergent x 1
-eggs x 25
-meat x 1
+flour x 25
+meat x 3
+juice x 1
