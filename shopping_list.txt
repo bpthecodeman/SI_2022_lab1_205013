@@ -1,5 +1,5 @@
-bread
-milk
-detergent
-eggs
-meat
+bread x 2
+milk x 5
+detergent x 1
+eggs x 25
+meat x 3
